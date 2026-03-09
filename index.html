@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Gatos Hidráulicos María · Expertos en hidráulica</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: #f5f5f5; color: #1e1e1e; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .btn-wsp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .btn-nge {
+      background: #FFD700;
+      color: #1E3A8A;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: 2px solid #1E3A8A;
+    }
+    .btn-nge:hover {
+      background: #1E3A8A;
+      color: #FFD700;
+      transform: scale(1.05);
+    }
+    #mobile-menu { display: none; }
+    #mobile-menu.mostrar { display: flex; }
+    .menu-hamburguesa { cursor: pointer; }
+    section { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/57XXXXXXXXX?text=Hola%20María,%20quiero%20consultar%20por%20sus%20gatos%20hidráulicos" class="btn-wsp" target="_blank">
+  <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+</a>
+
+<div class="max-w-6xl mx-auto p-4 md:p-6">
+
+  <!-- NAVEGACIÓN (escritorio) -->
+  <nav class="hidden md:flex justify-between items-center bg-[#1E3A8A] text-white px-6 py-3 rounded-full mb-6 border-2 border-[#FFD700] shadow-lg sticky top-4 z-50">
+    <div class="font-['Montserrat'] text-2xl font-bold" style="color: #FFD700;">⚙️ GATOS MARÍA</div>
+    <div class="flex gap-6">
+      <a href="#inicio" class="hover:text-[#FFD700]">Inicio</a>
+      <a href="#servicios" class="hover:text-[#FFD700]">Servicios</a>
+      <a href="#tipos" class="hover:text-[#FFD700]">Tipos de gatos</a>
+      <a href="#nosotros" class="hover:text-[#FFD700]">Nosotros</a>
+      <a href="#contacto" class="hover:text-[#FFD700]">Contacto</a>
+      <a href="/formulario-correcciones.html" class="hover:text-[#FFD700] font-bold" style="color: #FFD700;">📝 Actualizar</a>
+    </div>
+  </nav>
+
+  <!-- MENÚ HAMBURGUESA (móvil) -->
+  <div class="md:hidden sticky top-4 z-50">
+    <div class="flex justify-between items-center bg-[#1E3A8A] text-white p-4 rounded-2xl mb-4 border-2 border-[#FFD700]">
+      <span class="font-['Montserrat'] text-xl font-bold" style="color: #FFD700;">⚙️ GATOS MARÍA</span>
+      <button id="menu-btn" class="menu-hamburguesa text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="bg-[#1E3A8A] text-white p-4 rounded-2xl flex-col gap-3 border-2 border-[#FFD700] mb-4">
+      <a href="#inicio" class="block py-2 hover:text-[#FFD700]">Inicio</a>
+      <a href="#servicios" class="block py-2 hover:text-[#FFD700]">Servicios</a>
+      <a href="#tipos" class="block py-2 hover:text-[#FFD700]">Tipos de gatos</a>
+      <a href="#nosotros" class="block py-2 hover:text-[#FFD700]">Nosotros</a>
+      <a href="#contacto" class="block py-2 hover:text-[#FFD700]">Contacto</a>
+      <a href="/formulario-correcciones.html" class="block py-2 hover:text-[#FFD700] font-bold" style="color: #FFD700;">📝 Actualizar</a>
+    </div>
+  </div>
+
+  <!-- HERO con imagen del afiche -->
+  <section id="inicio" class="mb-12">
+    <div class="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden border-4 border-[#FFD700] shadow-2xl">
+      <img src="afiche-gatos-maria.jpg" alt="Taller de gatos hidráulicos María" class="w-full h-full object-cover object-center">
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent pt-20 pb-10">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-6xl font-bold mb-2" style="color: #FFD700;">⚙️ GATOS HIDRÁULICOS MARÍA</h1>
+          <p class="text-xl md:text-2xl mb-4">EXPERTOS EN REPARACIÓN Y VENTA · TODOS LOS TIPOS</p>
+          <a href="#contacto" class="btn-nge inline-block">SOLICITAR PRESUPUESTO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">🔧 NUESTROS SERVICIOS</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+        <div class="text-5xl mb-4">🔨</div>
+        <h3 class="text-xl font-bold mb-2" style="color: #1E3A8A;">Reparación</h3>
+        <p class="text-gray-700">Reparamos todo tipo de gatos hidráulicos, desde botella hasta caimán.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+        <div class="text-5xl mb-4">⚙️</div>
+        <h3 class="text-xl font-bold mb-2" style="color: #1E3A8A;">Mantenimiento</h3>
+        <p class="text-gray-700">Mantenimiento preventivo y correctivo para alargar la vida útil.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+        <div class="text-5xl mb-4">🛒</div>
+        <h3 class="text-xl font-bold mb-2" style="color: #1E3A8A;">Venta</h3>
+        <p class="text-gray-700">Venta de gatos nuevos y usados, todos certificados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOS DE GATOS (carrusel) -->
+  <section id="tipos" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">🛠️ TIPOS DE GATOS HIDRÁULICOS</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🧴</span>
+        <p class="font-bold mt-2">Botella</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">✂️</span>
+        <p class="font-bold mt-2">Tijera</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🛞</span>
+        <p class="font-bold mt-2">Piso</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🐊</span>
+        <p class="font-bold mt-2">Caimán</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🔧</span>
+        <p class="font-bold mt-2">Transmisión</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">👩‍🔧 SOBRE NOSOTROS</h2>
+    <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700]">
+      <p class="text-lg mb-4"><strong>María</strong>, técnica especialista en hidráulica con más de 20 años de experiencia. Apasionada por mantener la maquinaria pesada en óptimas condiciones.</p>
+      <div class="grid md:grid-cols-3 gap-4 mt-6">
+        <div>
+          <h3 class="font-bold text-[#1E3A8A]">🎯 Misión</h3>
+          <p>Ofrecer reparaciones honestas, rápidas y duraderas.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-[#1E3A8A]">👁️ Visión</h3>
+          <p>Ser el taller de referencia en hidráulica del nororiente.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-[#1E3A8A]">⭐ Valores</h3>
+          <p>Honestidad, calidad, compromiso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">📍 CONTACTO</h2>
+    <div class="bg-[#1E3A8A] text-white p-8 rounded-3xl border-4 border-[#FFD700] text-center">
+      <p class="text-2xl mb-4">📞 320 555 1234 · 321 555 5678</p>
+      <p class="text-lg mb-4">Calle 12 #23-45 · Barrio Industrial · Cúcuta</p>
+      <a href="https://wa.me/57XXXXXXXXX" class="btn-nge inline-block">📱 WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 text-gray-600 border-t-2 border-[#FFD700]">
+    <p>© 2026 Gatos Hidráulicos María · Todos los derechos reservados</p>
+    <p class="mt-2 text-sm">Diseño: <a href="https://wa.me/57XXXXXXXXX" class="text-[#1E3A8A] font-semibold">NGE Tarjetas Digitales</a></p>
+  </footer>
+
+</div>
+
+<!-- QR -->
+<div class="max-w-xs mx-auto mb-8 p-4 bg-white rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+  <h3 class="font-bold text-[#1E3A8A] mb-2">📲 Escanea y guarda el contacto</h3>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gatos-maria.netlify.app" alt="QR María" class="mx-auto">
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('mostrar'));
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('mostrar')));
+</script>
+
+</body>
+</html>
