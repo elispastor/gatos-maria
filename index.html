@@ -1,104 +1,206 @@
-<!-- ========================================= -->
-<!-- OFICINA VIRTUAL DE MARÍA - VERSIÓN REAL -->
-<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Gatos Hidráulicos María · Expertos en hidráulica</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: #f5f5f5; color: #1e1e1e; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .btn-wsp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .btn-nge {
+      background: #FFD700;
+      color: #1E3A8A;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: 2px solid #1E3A8A;
+    }
+    .btn-nge:hover {
+      background: #1E3A8A;
+      color: #FFD700;
+      transform: scale(1.05);
+    }
+    #mobile-menu { display: none; }
+    #mobile-menu.mostrar { display: flex; }
+    .menu-hamburguesa { cursor: pointer; }
+    section { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body class="bg-gray-100">
 
-<!-- BOTÓN INGRESOS -->
-<button onclick="toggleOficina()" class="fixed bottom-20 right-4 md:bottom-24 md:right-6 bg-[#FFD700] text-[#1E3A8A] rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shadow-2xl z-50 border-2 border-[#1E3A8A] hover:scale-110 transition-all" style="font-size: 28px;">
-  💰
-</button>
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/57XXXXXXXXX?text=Hola%20María,%20quiero%20consultar%20por%20sus%20gatos%20hidráulicos" class="btn-wsp" target="_blank">
+  <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+</a>
 
-<!-- OFICINA VIRTUAL -->
-<div id="oficinaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); z-index: 10000; align-items: center; justify-content: center;" onclick="if(event.target === this) toggleOficina()">
-  
-  <div style="background: white; max-width: 380px; width: 92%; border-radius: 32px; border: 3px solid #FFD700; overflow: hidden; max-height: 85vh; overflow-y: auto;" onclick="event.stopPropagation()">
-    
-    <!-- Cabecera -->
-    <div style="background: #1E3A8A; padding: 18px; text-align: center; border-bottom: 3px solid #FFD700;">
-      <h2 style="color: #FFD700; font-size: 24px; font-weight: 800; margin: 0;">💰 OFICINA VIRTUAL</h2>
-      <p style="color: white; font-size: 13px; margin-top: 5px;">Gatos Hidráulicos María</p>
+<div class="max-w-6xl mx-auto p-4 md:p-6">
+
+  <!-- NAVEGACIÓN (escritorio) -->
+  <nav class="hidden md:flex justify-between items-center bg-[#1E3A8A] text-white px-6 py-3 rounded-full mb-6 border-2 border-[#FFD700] shadow-lg sticky top-4 z-50">
+    <div class="font-['Montserrat'] text-2xl font-bold" style="color: #FFD700;">⚙️ GATOS MARÍA</div>
+    <div class="flex gap-6">
+      <a href="#inicio" class="hover:text-[#FFD700]">Inicio</a>
+      <a href="#servicios" class="hover:text-[#FFD700]">Servicios</a>
+      <a href="#tipos" class="hover:text-[#FFD700]">Tipos de gatos</a>
+      <a href="#nosotros" class="hover:text-[#FFD700]">Nosotros</a>
+      <a href="#contacto" class="hover:text-[#FFD700]">Contacto</a>
+      <a href="/formulario-correcciones.html" class="hover:text-[#FFD700] font-bold" style="color: #FFD700;">📝 Actualizar</a>
     </div>
-    
-    <div style="padding: 20px;">
-      
-      <!-- GANANCIAS DE MARÍA (cuando Adiela pague) -->
-      <div style="background: linear-gradient(145deg, #1E3A8A, #0f2b5c); padding: 20px; border-radius: 20px; text-align: center; margin-bottom: 20px; border: 2px solid #FFD700;">
-        <p style="color: rgba(255,255,255,0.8); font-size: 14px;">TUS GANANCIAS PENDIENTES</p>
-        <p style="font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; color: #FFD700; line-height: 1; margin: 5px 0;">$5.000</p>
-        <p style="color: #FFD700; font-size: 13px; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 30px; display: inline-block;">⏳ Pendiente de pago de Adiela</p>
-      </div>
-      
-      <!-- TUS REFERIDAS -->
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: #1E3A8A; margin-bottom: 15px;">
-        👥 TUS REFERIDAS
-      </h3>
-      
-      <!-- TARJETA DE ADIELA -->
-      <div style="background: white; border: 2px solid #FFD700; border-radius: 20px; padding: 18px; margin-bottom: 20px;">
-        
-        <!-- Info Adiela -->
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-          <div style="background: #1E3A8A; color: #FFD700; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">A</div>
-          <div>
-            <p style="font-weight: 700; font-size: 16px; color: #1E3A8A; margin: 0;">ADIELA ESTER</p>
-            <p style="font-weight: 700; font-size: 14px; color: #333; margin: 0;">VELASQUEZ LOBO</p>
-            <p style="background: #FFD700; color: #1E3A8A; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-top: 5px;">🛠️ HERRAMIENTAS EL SEGUNDAZO</p>
-          </div>
-        </div>
-        
-        <!-- Estado de pago de Adiela -->
-        <div style="background: #fff3cd; border-radius: 15px; padding: 15px; border: 1px solid #ffeeba;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <span style="font-weight: 600; color: #856404;">Estado de pago:</span>
-            <span style="background: #ffc107; color: #856404; padding: 3px 12px; border-radius: 30px; font-size: 12px; font-weight: 700;">⏳ PENDIENTE</span>
-          </div>
-          
-          <!-- Comisión para María -->
-          <div style="background: white; border-radius: 12px; padding: 12px;">
-            <p style="color: #666; font-size: 12px; margin-bottom: 5px;">💰 CUANDO ADIELA PAGUE, GANARÁS:</p>
-            <div style="display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-size: 28px; font-weight: 800; color: #28a745;">$5.000</span>
-              <span style="background: #1E3A8A; color: white; padding: 5px 15px; border-radius: 30px; font-size: 14px; font-weight: 700;">20%</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Mensaje motivador -->
-        <p style="font-size: 12px; color: #1E3A8A; margin-top: 15px; text-align: center; border-top: 1px dashed #FFD700; padding-top: 10px;">
-          ⭐ Apenas Adiela cancele su sitio web, estos $5.000 se activan
-        </p>
-      </div>
-      
-      <!-- EXPLICACIÓN CLARA -->
-      <div style="background: #e8f5e9; padding: 15px; border-radius: 15px; margin-bottom: 15px;">
-        <p style="font-size: 13px; color: #2e7d32; font-weight: 700;">📊 GANAS CUANDO TUS REFERIDAS PAGAN:</p>
-        <p style="font-size: 12px; color: #333;">Tú ganas el 20% de cada persona que refieras y compre su sitio web. Adiela es tu referida, cuando ella pague sus $30.000, tú ganas $5.000.</p>
-      </div>
-      
-      <!-- PLAN -->
-      <div style="background: #f5f5f5; border-radius: 15px; padding: 12px; margin-bottom: 15px;">
-        <p><span style="font-weight: 700;">📈 Tu plan:</span> Básico (20%)</p>
-        <p style="font-size: 12px;">💎 Plan Élite (40%): cuando acumules 5 referidos</p>
-      </div>
-      
-      <!-- Botón cerrar -->
-      <button onclick="toggleOficina()" style="background: #dc3545; color: white; border: none; padding: 12px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer;">
-        Cerrar Oficina
+  </nav>
+
+  <!-- MENÚ HAMBURGUESA (móvil) -->
+  <div class="md:hidden sticky top-4 z-50">
+    <div class="flex justify-between items-center bg-[#1E3A8A] text-white p-4 rounded-2xl mb-4 border-2 border-[#FFD700]">
+      <span class="font-['Montserrat'] text-xl font-bold" style="color: #FFD700;">⚙️ GATOS MARÍA</span>
+      <button id="menu-btn" class="menu-hamburguesa text-2xl">
+        <i class="fas fa-bars"></i>
       </button>
-      
+    </div>
+    <div id="mobile-menu" class="bg-[#1E3A8A] text-white p-4 rounded-2xl flex-col gap-3 border-2 border-[#FFD700] mb-4">
+      <a href="#inicio" class="block py-2 hover:text-[#FFD700]">Inicio</a>
+      <a href="#servicios" class="block py-2 hover:text-[#FFD700]">Servicios</a>
+      <a href="#tipos" class="block py-2 hover:text-[#FFD700]">Tipos de gatos</a>
+      <a href="#nosotros" class="block py-2 hover:text-[#FFD700]">Nosotros</a>
+      <a href="#contacto" class="block py-2 hover:text-[#FFD700]">Contacto</a>
+      <a href="/formulario-correcciones.html" class="block py-2 hover:text-[#FFD700] font-bold" style="color: #FFD700;">📝 Actualizar</a>
     </div>
   </div>
+
+  <!-- HERO con imagen del afiche -->
+  <section id="inicio" class="mb-12">
+    <div class="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden border-4 border-[#FFD700] shadow-2xl">
+      <img src="afiche-gatos-maria.jpg" alt="Taller de gatos hidráulicos María" class="w-full h-full object-cover object-center">
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent pt-20 pb-10">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-6xl font-bold mb-2" style="color: #FFD700;">⚙️ GATOS HIDRÁULICOS MARÍA</h1>
+          <p class="text-xl md:text-2xl mb-4">EXPERTOS EN REPARACIÓN Y VENTA · TODOS LOS TIPOS</p>
+          <a href="#contacto" class="btn-nge inline-block">SOLICITAR PRESUPUESTO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">🔧 NUESTROS SERVICIOS</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+        <div class="text-5xl mb-4">🔨</div>
+        <h3 class="text-xl font-bold mb-2" style="color: #1E3A8A;">Reparación</h3>
+        <p class="text-gray-700">Reparamos todo tipo de gatos hidráulicos, desde botella hasta caimán.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+        <div class="text-5xl mb-4">⚙️</div>
+        <h3 class="text-xl font-bold mb-2" style="color: #1E3A8A;">Mantenimiento</h3>
+        <p class="text-gray-700">Mantenimiento preventivo y correctivo para alargar la vida útil.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+        <div class="text-5xl mb-4">🛒</div>
+        <h3 class="text-xl font-bold mb-2" style="color: #1E3A8A;">Venta</h3>
+        <p class="text-gray-700">Venta de gatos nuevos y usados, todos certificados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOS DE GATOS (carrusel) -->
+  <section id="tipos" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">🛠️ TIPOS DE GATOS HIDRÁULICOS</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🧴</span>
+        <p class="font-bold mt-2">Botella</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">✂️</span>
+        <p class="font-bold mt-2">Tijera</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🛞</span>
+        <p class="font-bold mt-2">Piso</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🐊</span>
+        <p class="font-bold mt-2">Caimán</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow text-center border border-[#FFD700]">
+        <span class="text-3xl">🔧</span>
+        <p class="font-bold mt-2">Transmisión</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">👩‍🔧 SOBRE NOSOTROS</h2>
+    <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FFD700]">
+      <p class="text-lg mb-4"><strong>María</strong>, técnica especialista en hidráulica con más de 20 años de experiencia. Apasionada por mantener la maquinaria pesada en óptimas condiciones.</p>
+      <div class="grid md:grid-cols-3 gap-4 mt-6">
+        <div>
+          <h3 class="font-bold text-[#1E3A8A]">🎯 Misión</h3>
+          <p>Ofrecer reparaciones honestas, rápidas y duraderas.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-[#1E3A8A]">👁️ Visión</h3>
+          <p>Ser el taller de referencia en hidráulica del nororiente.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-[#1E3A8A]">⭐ Valores</h3>
+          <p>Honestidad, calidad, compromiso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #1E3A8A;">📍 CONTACTO</h2>
+    <div class="bg-[#1E3A8A] text-white p-8 rounded-3xl border-4 border-[#FFD700] text-center">
+      <p class="text-2xl mb-4">📞 320 555 1234 · 321 555 5678</p>
+      <p class="text-lg mb-4">Calle 12 #23-45 · Barrio Industrial · Cúcuta</p>
+      <a href="https://wa.me/57XXXXXXXXX" class="btn-nge inline-block">📱 WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 text-gray-600 border-t-2 border-[#FFD700]">
+    <p>© 2026 Gatos Hidráulicos María · Todos los derechos reservados</p>
+    <p class="mt-2 text-sm">Diseño: <a href="https://wa.me/57XXXXXXXXX" class="text-[#1E3A8A] font-semibold">NGE Tarjetas Digitales</a></p>
+  </footer>
+
+</div>
+
+<!-- QR -->
+<div class="max-w-xs mx-auto mb-8 p-4 bg-white rounded-2xl shadow-lg border-2 border-[#FFD700] text-center">
+  <h3 class="font-bold text-[#1E3A8A] mb-2">📲 Escanea y guarda el contacto</h3>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gatos-maria.netlify.app" alt="QR María" class="mx-auto">
 </div>
 
 <script>
-  function toggleOficina() {
-    const modal = document.getElementById('oficinaModal');
-    modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
-  }
-  
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      const modal = document.getElementById('oficinaModal');
-      if (modal.style.display === 'flex') modal.style.display = 'none';
-    }
-  });
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('mostrar'));
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('mostrar')));
 </script>
+
+</body>
+</html>
